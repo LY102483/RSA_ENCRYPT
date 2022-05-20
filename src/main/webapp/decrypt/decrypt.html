@@ -1,0 +1,29 @@
+#@layout()
+#define main()
+<h1>文件解密系统</h1>
+<div class="table_box">
+	<p>欢迎来到 基于RSA的文件加解密系统！</p>
+	<br><br><br>
+	<div class="form_box">
+		<form action="/decrypt/upload" enctype="multipart/form-data" method="post">
+			<fieldset class="solid">
+				选择待解密文件:<br>
+				<input name="file_upload" type="file" multiple="multiple">
+				<br><br/>
+				选择解密方式:<br>
+				<select name="etype">
+					<option value="RSA">RSA</option>
+					<option value="DES">DES</option>
+					<option value="AES">AES</option>
+
+				</select>
+				<br/>  <br/>
+				输入密码:<br>
+				<input   name="key" type="password" >
+				<br><br>
+				<input value="开始解密" type="submit">
+			</fieldset>
+		</form>
+	</div>
+</div>
+#end

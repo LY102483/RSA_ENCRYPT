@@ -1,0 +1,35 @@
+#@layout()
+#define main()
+<h1>RSA文件加密系统</h1>
+<div class="table_box">
+    <p>欢迎来到 基于RSA的文件加解密系统！</p>
+    <br><br><br>
+    <div class="form_box">
+        <form action="/enrsa" enctype="multipart/form-data" method="post">
+            <fieldset class="solid">
+                选择待加密文件:<br>
+                <input name="file_upload" type="file" multiple="multiple">
+                <br><br/>
+                密钥长度:<br>
+                <select name="key_len">
+                    <option value="1">512bit</option>
+                    <option value="2">1024bit</option>
+                    <option value="3">2048bit</option>
+                    <option value="4">4096bit</option>
+                </select>
+                <br/>  <br/>
+                密钥格式:<br>
+                <select name="key_type">
+                    <option value="1">PKCS#1</option>
+                    <option value="2">PKCS#8</option>
+                </select>
+                <br/>  <br/>
+                私钥密码:<br>
+                <input   name="key" type="password" >
+                <br><br>
+                <input value="开始加密" type="submit">
+            </fieldset>
+        </form>
+    </div>
+</div>
+#end

@@ -1,0 +1,21 @@
+#@layout()
+#define main()
+<h1>DES文件加密系统</h1>
+<div class="table_box">
+    <p>欢迎来到 基于DES的文件加解密系统！</p>
+    <br><br><br>
+    <div class="form_box">
+        <form action="/endes" enctype="multipart/form-data" method="post">
+            <fieldset class="solid">
+                选择待加密文件:<br>
+                <input name="file_upload" type="file" multiple="multiple">
+                <br/>  <br/>
+                输入加密密码:<br>
+                <input   name="key" type="password" >
+                <br><br>
+                <input value="开始加密" type="submit">
+            </fieldset>
+        </form>
+    </div>
+</div>
+#end
