@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>登陆</title>
+    <title>注册</title>
 
     <meta
             content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
@@ -40,13 +40,14 @@
     </script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $("#login").click(function () {
-                $("#loginForm").ajaxSubmit({
+            $("#register").click(function () {
+                $("#registerForm").ajaxSubmit({
                     dataType: "json",
                     type: "post",
                     success: function (data) {
                         var data = eval("(" + data + ")");//转换为json对象
                         if (data.flag) {
+                            alert("注册成功，即将跳转首页！")
                             window.location = "manage";
                         } else {
                             alert(data.msg);
@@ -65,11 +66,11 @@
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <h3 class="login-box-msg">登录</h3>
+        <h3 class="login-box-msg">用户注册</h3>
 
-        <form id="loginForm" action="/login/login" method="post">
+        <form id="registerForm" action="/register/register" method="post">
             <div class="form-group has-feedback">
-                <input type="text" name="name" class="form-control"
+                <input type="text" name="username" class="form-control"
                        placeholder="用户名"> <span
                     class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
@@ -80,11 +81,11 @@
             </div>
             <div class="row" style="display: flex;justify-content: center">
                 <div class="col-xs-4">
-                    <input type="button" id="login" class="btn btn-primary btn-block btn-flat" value="登陆"></input>
+                    <input type="button" id="register" class="btn btn-primary btn-block btn-flat" value="注册"></input>
                 </div>
             </div>
         </form>
-        <a href="/register" style="display: flex;justify-content: center;margin-top: 30px">注册账号</a><br>
+        <a href="/login" style="display: flex;justify-content: center;margin-top: 30px">已有账号,直接登陆</a><br>
     </div>
 </div>
 

@@ -43,4 +43,11 @@ public class LoginController extends Controller {
     public void manage() {
         redirect("/");
     }
+
+
+    //退出登陆
+    public void exit() {
+        setSessionAttr("nickname", null);
+        redirect("/login");
+    }
 }

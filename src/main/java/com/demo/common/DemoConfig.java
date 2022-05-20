@@ -75,12 +75,12 @@ public class DemoConfig extends JFinalConfig {
 	@Override
 	public void configPlugin(Plugins me) {
 
-		DruidPlugin druidPlugin = new DruidPlugin("jdbc:mysql://8.136.87.180:3306/jfinal_demo", "jfinal_demo","jfinal_demo");
+		DruidPlugin druidPlugin = new DruidPlugin(PropKit.get("jdbcUrl"),PropKit.get("user"),PropKit.get("password"));
 		me.add(druidPlugin);
 
 		//激活插件
 		ActiveRecordPlugin activeRecordPlugin = new ActiveRecordPlugin(druidPlugin);
-		activeRecordPlugin.addMapping("account", Account.class); //需要自行创建UserModel类
+		activeRecordPlugin.addMapping("account", Account.class);
 		me.add(activeRecordPlugin);
 	}
 

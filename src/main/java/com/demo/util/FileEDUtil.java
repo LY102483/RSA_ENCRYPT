@@ -1,5 +1,8 @@
 package com.demo.util;
 
+import com.demo.interceptor.MyInterceptor;
+import com.jfinal.aop.Before;
+
 import javax.crypto.Cipher;
 import javax.crypto.CipherInputStream;
 import javax.crypto.CipherOutputStream;
@@ -17,6 +20,9 @@ import java.security.spec.X509EncodedKeySpec;
 /**
  * Created by wushange on 2022/4/1.
  */
+//拦截器start
+@Before(MyInterceptor.class)
+//拦截器end
 public class FileEDUtil {
 
     /**

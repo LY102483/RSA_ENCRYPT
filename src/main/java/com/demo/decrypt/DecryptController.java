@@ -1,6 +1,8 @@
 package com.demo.decrypt;
 
+import com.demo.interceptor.MyInterceptor;
 import com.demo.util.FileEDUtil;
+import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
 import com.jfinal.core.Path;
 import com.jfinal.kit.PathKit;
@@ -14,6 +16,9 @@ import java.util.List;
 /**
  * Created by wushange on 2022/4/1.
  */
+//拦截器start
+@Before(MyInterceptor.class)
+//拦截器end
 @Path("/decrypt")
 public class DecryptController extends Controller {
 

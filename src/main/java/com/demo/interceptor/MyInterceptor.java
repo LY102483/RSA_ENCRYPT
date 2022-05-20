@@ -12,7 +12,6 @@ public class MyInterceptor implements Interceptor {
     public void intercept(Invocation inv) {
         Controller controller = inv.getController();
         String username = controller.getSessionAttr("nickname");
-        System.out.println("session中用户名为"+username);
         // 用户如果没有登录，那么就跳转到登录页面
         if (username == null || username.equals("")) {
             inv.getController().redirect("/login");
